@@ -1,83 +1,83 @@
 class ProduitsController < ApplicationController
-  # GET /produits
-  # GET /produits.xml
-  def index
-    @produits = Produit.all
+    # GET /produits
+    # GET /produits.xml
+    def index
+        @produits = Produit.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @produits }
+        respond_to do |format|
+            format.html # index.html.erb
+            format.xml  { render :xml => @produits }
+        end
     end
-  end
 
-  # GET /produits/1
-  # GET /produits/1.xml
-  def show
-    @produit = Produit.find(params[:id])
+    # GET /produits/1
+    # GET /produits/1.xml
+    def show
+        @produit = Produit.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @produit }
+        respond_to do |format|
+            format.html # show.html.erb
+            format.xml  { render :xml => @produit }
+        end
     end
-  end
 
-  # GET /produits/new
-  # GET /produits/new.xml
-  def new
-    @produit = Produit.new
+    # GET /produits/new
+    # GET /produits/new.xml
+    def new
+        @produit = Produit.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @produit }
+        respond_to do |format|
+            format.html # new.html.erb
+            format.xml  { render :xml => @produit }
+        end
     end
-  end
 
-  # GET /produits/1/edit
-  def edit
-    @produit = Produit.find(params[:id])
-  end
-
-  # POST /produits
-  # POST /produits.xml
-  def create
-    @produit = Produit.new(params[:produit])
-
-    respond_to do |format|
-      if @produit.save
-        format.html { redirect_to(@produit, :notice => 'Produit was successfully created.') }
-        format.xml  { render :xml => @produit, :status => :created, :location => @produit }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @produit.errors, :status => :unprocessable_entity }
-      end
+    # GET /produits/1/edit
+    def edit
+        @produit = Produit.find(params[:id])
     end
-  end
 
-  # PUT /produits/1
-  # PUT /produits/1.xml
-  def update
-    @produit = Produit.find(params[:id])
+    # POST /produits
+    # POST /produits.xml
+    def create
+        @produit = Produit.new(params[:produit])
 
-    respond_to do |format|
-      if @produit.update_attributes(params[:produit])
-        format.html { redirect_to(@produit, :notice => 'Produit was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @produit.errors, :status => :unprocessable_entity }
-      end
+        respond_to do |format|
+            if @produit.save
+                format.html { redirect_to(@produit, :notice => 'Produit was successfully created.') }
+                format.xml  { render :xml => @produit, :status => :created, :location => @produit }
+            else
+                format.html { render :action => "new" }
+                format.xml  { render :xml => @produit.errors, :status => :unprocessable_entity }
+            end
+        end
     end
-  end
 
-  # DELETE /produits/1
-  # DELETE /produits/1.xml
-  def destroy
-    @produit = Produit.find(params[:id])
-    @produit.destroy
+    # PUT /produits/1
+    # PUT /produits/1.xml
+    def update
+        @produit = Produit.find(params[:id])
 
-    respond_to do |format|
-      format.html { redirect_to(produits_url) }
-      format.xml  { head :ok }
+        respond_to do |format|
+            if @produit.update_attributes(params[:produit])
+                format.html { redirect_to(@produit, :notice => 'Produit was successfully updated.') }
+                format.xml  { head :ok }
+            else
+                format.html { render :action => "edit" }
+                format.xml  { render :xml => @produit.errors, :status => :unprocessable_entity }
+            end
+        end
     end
-  end
+
+    # DELETE /produits/1
+    # DELETE /produits/1.xml
+    def destroy
+        @produit = Produit.find(params[:id])
+        @produit.destroy
+
+        respond_to do |format|
+            format.html { redirect_to(produits_url) }
+            format.xml  { head :ok }
+        end
+    end
 end
