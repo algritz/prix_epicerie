@@ -12,14 +12,14 @@
     <% @produits.each do |produit| %>
     <tr>
         <td><%= produit.nom %></td>
-        <td><%= produit.prix %></td>
-        <td><%= produit.mesure %></td>
+        <td><nobr><%= produit.prix %></nobr></td>
+        <td><nobr><%= produit.mesure %></nobr></td>
         <td><%= produit.magasin %></td>
-        <td>
+        <td><nobr>
         <%=
  theDate = produit.updated_at
             String(theDate)[0..10]
-        %>
+        %></nobr>
         </td>
         <td><%= link_to 'Show', produit %></td>
         <td><%= link_to 'Edit', edit_produit_path(produit) %></td>
