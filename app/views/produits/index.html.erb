@@ -1,0 +1,34 @@
+<h1>Liste des produits</h1>
+
+<table cellpadding="5" cellspacing="0" border="1">
+  <tr align="left" bgcolor="#c1c1c1">
+    <th>Nom</th>
+    <th>Prix</th>
+    <th>Mesure</th>
+    <th>Magasin</th>
+    <th>Dernier Achat</th>
+    <th colspan="3"></th>
+  </tr>
+
+<% @produits.each do |produit| %>
+  <tr>
+    <td><%= produit.nom %></td>
+    <td><%= produit.prix %></td>
+    <td><%= produit.mesure %></td>
+    <td><%= produit.magasin %></td>
+    <td>
+      <%= 
+        theDate = produit.updated_at
+        String(theDate)[0..10]
+      %>
+    </td>
+    <td><%= link_to 'Show', produit %></td>
+    <td><%= link_to 'Edit', edit_produit_path(produit) %></td>
+    <td><%= link_to 'Destroy', produit, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Produit', new_produit_path %>

@@ -1,4 +1,6 @@
 PrixEpicerie::Application.routes.draw do
+  resources :produits
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

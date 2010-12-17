@@ -1,0 +1,32 @@
+<h1>Details du produit</h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nom:</b>
+  <%= @produit.nom %>
+</p>
+
+<p>
+  <b>Prix:</b>
+  <%= @produit.prix %>
+</p>
+
+<p>
+  <b>Mesure:</b>
+  <%= @produit.mesure %>
+</p>
+
+<p>
+  <b>Magasin:</b>
+  <%= @produit.magasin %>
+</p>
+
+<p>
+  <b>Dernier Achat:</b>
+  <%= 
+        theDate = @produit.updated_at
+        String(theDate)[0..10]
+  %>
+</p>
+<%= link_to 'Edit', edit_produit_path(@produit) %> |
+<%= link_to 'Back', produits_path %>

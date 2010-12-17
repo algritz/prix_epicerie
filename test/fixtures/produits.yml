@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nom: MyText
+  prix: 1
+  mesure: MyText
+  magasin: MyText
+
+two:
+  nom: MyText
+  prix: 1
+  mesure: MyText
+  magasin: MyText
