@@ -21,13 +21,13 @@
             String(theDate)[0..10]
         %></nobr>
         </td>
-        <td><%= link_to 'Show', produit %></td>
-        <td><%= link_to 'Edit', edit_produit_path(produit) %></td>
-        <td><%= link_to 'Destroy', produit, :confirm => 'Are you sure?', :method => :delete %></td>
+        <td><%= link_to 'Voir', produit %></td>
+        <td><%= link_to 'Editer', edit_produit_path(produit) %></td>
+        <td><%= link_to 'Effacer', produit, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
     <% end %>
 
 </table>
 <%= will_paginate %>
 <br />
-<%= link_to 'New Produit', new_produit_path %>
+<%= link_to 'Ajouter Produit', new_produit_path %>
