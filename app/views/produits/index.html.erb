@@ -26,7 +26,7 @@
         <td><%= produit.magasin %></td>
         <td>
         <nobr>
-            <%= theDate = produit.updated_at String(theDate)[0..10] %>
+            <%= raccourcirDate(produit.updated_at) %>
         </nobr>
         </td>
         <td><%= link_to 'Voir', produit %></td>
