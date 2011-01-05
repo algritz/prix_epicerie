@@ -10,15 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101217142952) do
+ActiveRecord::Schema.define(:version => 20110105154215) do
 
   create_table "produits", :force => true do |t|
-    t.text     "nom"
-    t.float    "prix"
-    t.text     "mesure"
-    t.text     "magasin"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.text      "nom"
+    t.float     "prix"
+    t.text      "mesure"
+    t.text      "magasin"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "meilleurprix", :default => 0
   end
 
 end
